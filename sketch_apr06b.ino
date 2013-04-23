@@ -40,7 +40,7 @@ unsigned long ledArray[LED_COLUMNS] = {0x00001, 0x00002, 0x00004, 0x00008,
 class CTimer {
   int clock_divider, enableCMPA, enableCMPB, enableOVF;
     
-  // to set clock:
+  // to set clock:print
   // flush interrupts (flushInterrupts)
   // set initial cycle count (set_time)
   // set divider (set_divider)
@@ -131,7 +131,8 @@ Return Value:
     shiftOut(DS, INCLK, LSBFIRST, ledArray[ledArrayIndex] >> 8);
     shiftOut(DS, INCLK, LSBFIRST, ledArray[ledArrayIndex] >> 16);
     digitalWrite(OUTCLK, HIGH);
-    Serial.println(ledArray[ledArrayIndex], HEX);
+    // stupid line
+    //Serial.println(ledArray[ledArrayIndex], HEX);
     ledArrayIndex += 1;
     ledArrayIndex %= LED_COLUMNS;
     return;
